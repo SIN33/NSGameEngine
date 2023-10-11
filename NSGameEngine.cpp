@@ -1,5 +1,6 @@
 
 #include "NSGameEngine.h"
+#include "Timer.h"
 #include "D3D.h"
  
 // ゲームの初期設定を行う
@@ -8,10 +9,23 @@ void NSGameEngine::Initialize()
 	//Todo : set Direct X Or Open Gl
 }
  
-// このゲームの時間を進める(処理を実行する)
+// ゲームループ内のメイン処理
+//下記の処理を行う
+//　1.キー操作 ProcessInput()
+//　2.ゲームオブジェクト更新 UpdateGame()
+//　3.描画情報出力 GenerateOutput() Direct X/ Open Glによるバックバッファ描画　→　ゲームオブジェクトの描画  → バッファの切り替え
+//  4. 時刻更新　Timer:;timeproc 
+
 void NSGameEngine::Execute()
 {
-	float color[4] = { 0.2f, 0.2f, 0.8f, 1.0f }; //bulue
+	//ProcessInput();
+
+	//UpdateGame();
+
+	//▼GenerateOutput();
+	//実験用、DirectXによる描画(Rendering)
+	//To do 将来的にはInterfaceを介してOpen GLとDirectXを切り替えるようにする
+	float color[4] = { 0.2f, 0.2f, 0.8f, 1.0f }; //bule
 	 // clear back buffer
 	D3D.ClearRenderTargetView(color);
 
@@ -31,12 +45,13 @@ void NSGameEngine::Execute()
 		//	{{-1,-1,0}},
 		//};
 
-		VertexType v[4] = {
-    {{-0.5f, -0.5f, 0}},
-    {{-0.5f,  0.5f, 0}},
-    {{ 0.5f, -0.5f, 0}},
-    {{ 0.5f,  0.5f, 0}},
-};
+		VertexType v[4] =
+		{
+			{{-0.5f, -0.5f, 0}},
+			{{-0.5f,  0.5f, 0}},
+			{{ 0.5f, -0.5f, 0}},
+			{{ 0.5f,  0.5f, 0}},
+		};
  
 		//set vertexbuffer req info
 		D3D11_BUFFER_DESC vbDesc = {};
@@ -70,8 +85,14 @@ void NSGameEngine::Execute()
 		D3D.m_deviceContext->Draw(4, 0);
  
 	}
- 
 
 	// swap 
 	D3D.PresentBySwapChain(1, 0);
+
+	//▲GenerateOutput();
+
+	auto timer = Timer();
+	timer.TickProc();
+
+
 }

@@ -146,14 +146,20 @@
     <ClInclude Include="D3DUtilTools.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GameApp.h" />
+    <ClInclude Include="MathCircle.h" />
     <ClInclude Include="NSGameEngine.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D3DImpl.cpp" />
     <ClCompile Include="GameApp.cpp" />
+    <ClCompile Include="MathCircle.cpp" />
     <ClCompile Include="NSGameEngine.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="NSGameEngine.rc" />
@@ -162,7 +168,17 @@
     <Image Include="NSGameEngine.ico" />
     <Image Include="small.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\directxtex_desktop_2019.2023.9.6.1\build\native\directxtex_desktop_2019.targets" Condition="Exists('packages\directxtex_desktop_2019.2023.9.6.1\build\native\directxtex_desktop_2019.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\directxtex_desktop_2019.2023.9.6.1\build\native\directxtex_desktop_2019.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\directxtex_desktop_2019.2023.9.6.1\build\native\directxtex_desktop_2019.targets'))" />
+  </Target>
 </Project>

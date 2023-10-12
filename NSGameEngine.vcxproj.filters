@@ -13,6 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\Components">
+      <UniqueIdentifier>{865e6241-2ec5-4e59-9219-2a863378a90a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Components">
+      <UniqueIdentifier>{e3844311-a5e3-4afd-b13b-284b88322173}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameObjects">
+      <UniqueIdentifier>{36e422cc-75f8-47a9-aeac-4fa7f6b5c6dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObjects">
+      <UniqueIdentifier>{acd888ba-ef60-4fbe-a600-ce837d4431e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\InputSystem">
+      <UniqueIdentifier>{8ad958ab-4ab0-4b71-904e-c0a3bb4afc8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\InputSystem">
+      <UniqueIdentifier>{1aab91fc-4887-48ec-95cf-72b34ae08036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameSystem">
+      <UniqueIdentifier>{11a65c33-34ea-495c-8760-fac99c48a193}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameSystem">
+      <UniqueIdentifier>{6fdd0b19-61e9-45c5-906d-55c81ecaa24d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Camera">
+      <UniqueIdentifier>{baefa6c6-e917-4158-9a4c-d1a7ff0d2545}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Camera">
+      <UniqueIdentifier>{ab8737ab-e69e-4070-9dd1-d822d20c2501}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -30,9 +60,6 @@
     <ClInclude Include="D3D.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="NSGameEngine.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="CommonTools.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -48,15 +75,27 @@
     <ClInclude Include="Vector2.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Components\Component.h">
+      <Filter>ヘッダー ファイル\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Actor.h">
+      <Filter>ヘッダー ファイル\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineCore\InputSystem\InputSystem.h">
+      <Filter>ヘッダー ファイル\InputSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineCore\GameSystem\NSGameEngine.h">
+      <Filter>ヘッダー ファイル\GameSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineCore\Camera\Camera.h">
+      <Filter>ヘッダー ファイル\Camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameApp.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="D3DImpl.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="NSGameEngine.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Timer.cpp">
@@ -67,6 +106,21 @@
     </ClCompile>
     <ClCompile Include="Vector2.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Component.cpp">
+      <Filter>ソース ファイル\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Actor.cpp">
+      <Filter>ソース ファイル\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="InputSystem.cpp">
+      <Filter>ソース ファイル\InputSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineCore\GameSystem\NSGameEngine.cpp">
+      <Filter>ソース ファイル\GameSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineCore\Camera\Camera.cpp">
+      <Filter>ソース ファイル\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

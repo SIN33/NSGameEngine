@@ -42,6 +42,7 @@ void Timer::TickProc()
 	DWORD ms = 1000 / nMaxFps;
 	if (m_deltaTime * 1000 < ms)
 	{
+		//垂直同期
 		//ディスプレイの更新前にフレームの更新処理が終わった場合、まつ
 		Sleep(ms - (m_deltaTime * 1000));
 	}
